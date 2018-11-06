@@ -12,6 +12,7 @@
 		8D35BBAB218DD32F00F33D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D35BBA9218DD32F00F33D7C /* Main.storyboard */; };
 		8D35BBAD218DD32F00F33D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D35BBAC218DD32F00F33D7C /* Assets.xcassets */; };
 		8D35BBB0218DD32F00F33D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D35BBAE218DD32F00F33D7C /* LaunchScreen.storyboard */; };
+		8D35BBB8218DD6A500F33D7C /* BigPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35BBB7218DD6A500F33D7C /* BigPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8D35BBAC218DD32F00F33D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D35BBAF218DD32F00F33D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D35BBB1218DD32F00F33D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D35BBB7218DD6A500F33D7C /* BigPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		8D35BBA4218DD32F00F33D7C /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
+				8D35BBB7218DD6A500F33D7C /* BigPreviewViewController.swift */,
 				8D35BBA5218DD32F00F33D7C /* AppDelegate.swift */,
 				8D35BBA7218DD32F00F33D7C /* ViewController.swift */,
 				8D35BBA9218DD32F00F33D7C /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				8D35BBA8218DD32F00F33D7C /* ViewController.swift in Sources */,
 				8D35BBA6218DD32F00F33D7C /* AppDelegate.swift in Sources */,
+				8D35BBB8218DD6A500F33D7C /* BigPreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
