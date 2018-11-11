@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D264A2E21984AA20098DC6D /* Button_Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D264A2D21984AA20098DC6D /* Button_Custom.swift */; };
 		8D35BBA6218DD32F00F33D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35BBA5218DD32F00F33D7C /* AppDelegate.swift */; };
 		8D35BBA8218DD32F00F33D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35BBA7218DD32F00F33D7C /* ViewController.swift */; };
 		8D35BBAB218DD32F00F33D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D35BBA9218DD32F00F33D7C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D264A2D21984AA20098DC6D /* Button_Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button_Custom.swift; sourceTree = "<group>"; };
 		8D35BBA2218DD32F00F33D7C /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D35BBA5218DD32F00F33D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D35BBA7218DD32F00F33D7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		8D35BBA4218DD32F00F33D7C /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
+				8D264A2D21984AA20098DC6D /* Button_Custom.swift */,
 				8D35BBB7218DD6A500F33D7C /* BigPreviewViewController.swift */,
 				8D35BBA5218DD32F00F33D7C /* AppDelegate.swift */,
 				8D35BBA7218DD32F00F33D7C /* ViewController.swift */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D264A2E21984AA20098DC6D /* Button_Custom.swift in Sources */,
 				8D35BBA8218DD32F00F33D7C /* ViewController.swift in Sources */,
 				8D35BBA6218DD32F00F33D7C /* AppDelegate.swift in Sources */,
 				8D35BBB8218DD6A500F33D7C /* BigPreviewViewController.swift in Sources */,
