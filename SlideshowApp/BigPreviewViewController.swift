@@ -1,35 +1,31 @@
-//
-//  BigPreviewViewController.swift
-//  SlideshowApp
-//
-//  Created by kataoka-tatsunari on 2018/11/03.
-//  Copyright © 2018年 tatsunari-k. All rights reserved.
-//
-
 import UIKit
-
 class BigPreviewViewController: UIViewController {
-
+    var bigviewimage : UIImage!  //bigviewimageにbigaimageの画像名を利用して画像を格納
+    var bigimage : String!  //bigimageに画像名を格納bigviewimageへの画像格納時の画像名指定に使用
+    @IBOutlet weak var bigviewimageIBO: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //動作確認
+        //bigimage = "01"
+        //bigviewimage = UIImage(named:"01")
+        //bigviewimageIBO.image = bigviewimage
+        //print("動作確認")
+        //print("\(bigimage)")
+        bigviewimage = UIImage(named: "\(bigimage)")//配列からimagesデータを格納する
+        bigviewimageIBO.image = bigviewimage//更新したデータを格納した変数を使用して画像を表示
+        print("動作確認03")
+        print("\(bigimage)")
+        print("\(bigviewimage)")
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("動作確認")
+        print("\(bigimage)")
     }
-    */
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var textPreviewStop :String! //再生/停止ボタン用テキスト
     
     //画像管理用の配列
-    let images: [String] = ["01","02","03"]
+    let images: [String] = ["01.JPG","02.JPG","03.JPG"]
     //swiftではプロパティの読み込み順は定義されていないため、プロパティを宣言する時の初期値に、別のプロパティ変数を使えない
     //images[0]　→　01 で画像名を指定
     var viewimage : UIImage!
@@ -32,6 +32,19 @@ class ViewController: UIViewController {
         print("\(images[countNo])")
         viewButtonIBO.setImage(viewimage, for: .normal)//更新したデータを格納した変数を使用して画像を表示
     }
+    
+    ///////////画面遷移時に表示中の画像名を抽出/////////////
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のResultViewControllerを取得する
+        let bigPreviewViewController:BigPreviewViewController = segue.destination as! BigPreviewViewController
+        // 遷移先のResultViewControllerで宣言しているbigimageに画像名を渡す
+        bigPreviewViewController.bigimage = images[countNo]
+        print("動作確認02")
+        print("\(bigPreviewViewController.bigimage)")
+        print("\(images[countNo])")
+        
+    }
+    
     ///////////戻るボタン/////////////
     @IBAction func backButtonIBA(_ sender: AnyObject) {
         countNo -= 1
@@ -48,10 +61,7 @@ class ViewController: UIViewController {
     
     ////////////再生・停止ボタン////////////
     @IBAction func previewStopButtonIBA(_ sender: AnyObject) {
-        //タイマーの始動
-        //カウントを始める
-        //二秒ごとに関数を呼ばれる処理
-        //関数内で配列を変更し、表示画像を変更する処理を記述
+        //タイマーの始動  //カウントを始める  //二秒ごとに関数を呼ばれる処理  //関数内で配列を変更し、表示画像を変更する処理を記述
         //2秒ごとに指定のupdateTimer関数を呼び出す処理
         if self.timer == nil {
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
@@ -101,17 +111,15 @@ class ViewController: UIViewController {
     ////////////////////////////////////////////////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //初期画像のセット
         viewimage = UIImage(named: "\(images[countNo])")//配列からimagesデータを格納する
         //print("\(images[countNo])")
         viewButtonIBO.setImage(viewimage, for: .normal)//更新したデータを格納した変数を使用して画像を表示
+        print("動作確認")
+        print("\(images[countNo])")
         
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
-
-
