@@ -38,9 +38,9 @@ class ViewController: UIViewController {
         // segueから遷移先のResultViewControllerを取得する
         let bigPreviewViewController:BigPreviewViewController = segue.destination as! BigPreviewViewController
         // 遷移先のResultViewControllerで宣言しているbigimageに画像名を渡す
-        bigPreviewViewController.bigimage = images[countNo]
+        bigPreviewViewController.bigimageName = images[countNo]
         print("動作確認02")
-        print("\(bigPreviewViewController.bigimage)")
+        print("\(bigPreviewViewController.bigimageName)")
         print("\(images[countNo])")
         
     }
@@ -115,8 +115,8 @@ class ViewController: UIViewController {
         viewimage = UIImage(named: "\(images[countNo])")//配列からimagesデータを格納する
         //print("\(images[countNo])")
         viewButtonIBO.setImage(viewimage, for: .normal)//更新したデータを格納した変数を使用して画像を表示
-        print("動作確認")
-        print("\(images[countNo])")
+        //print("動作確認")
+        //print("\(images[countNo])")
         
     }
     override func didReceiveMemoryWarning() {
