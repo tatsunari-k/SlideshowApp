@@ -43,18 +43,7 @@ class ViewController: UIViewController {
         print("\(bigPreviewViewController.bigimageName)")
         print("\(images[countNo])")
         
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
-            // ボタンの操作を無効
-            backButton.isEnabled = false
-            nextButton.isEnabled = false
-            backButton.alpha = 0.3
-            nextButton.alpha = 0.3
-            //backButton.setTitleColor(UIColor(red:0.96, green:0.55, blue:0.15, alpha:1.0), for: .normal)
-            self.previewStopButton.setTitle("停止", for: .normal)
-        }
-            //このままじゃ永遠に加算されていくのでインスタンスがあるか否かをチェックし、条件分岐させる
-        else if self.timer != nil {
+        if self.timer != nil {
             self.timer.invalidate()   // 現在のタイマーを破棄する
             self.timer = nil
             // ボタンの操作を有効化
