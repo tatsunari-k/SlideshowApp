@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     //画像管理用の配列
     let images: [String] = ["01.JPG","02.JPG","03.JPG"]
     //swiftではプロパティの読み込み順は定義されていないため、プロパティを宣言する時の初期値に、別のプロパティ変数を使えない
-    //images[0]　→　01 で画像名を指定
+    //images[0]　→　01.JPG で画像名を指定
     var viewimage : UIImage!
     
     ///////////画像送り関数/////////////
@@ -43,6 +43,29 @@ class ViewController: UIViewController {
         print("\(bigPreviewViewController.bigimageName)")
         print("\(images[countNo])")
         
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            // ボタンの操作を無効
+            backButton.isEnabled = false
+            nextButton.isEnabled = false
+            backButton.alpha = 0.3
+            nextButton.alpha = 0.3
+            //backButton.setTitleColor(UIColor(red:0.96, green:0.55, blue:0.15, alpha:1.0), for: .normal)
+            self.previewStopButton.setTitle("停止", for: .normal)
+        }
+            //このままじゃ永遠に加算されていくのでインスタンスがあるか否かをチェックし、条件分岐させる
+        else if self.timer != nil {
+            self.timer.invalidate()   // 現在のタイマーを破棄する
+            self.timer = nil
+            // ボタンの操作を有効化
+            backButton.isEnabled = true
+            nextButton.isEnabled = true
+            backButton.alpha = 1
+            nextButton.alpha = 1
+            //backButton.setTitleColor(UIColor.white, for: .normal)//テキストカラーの変更
+            self.previewStopButton.setTitle("再生", for: .normal)
+        }
+        
     }
     
     ///////////戻るボタン/////////////
@@ -52,7 +75,7 @@ class ViewController: UIViewController {
         if (countNo < 0){
             countNo = images.count //0以下になったら配列の最後の数字をcountNo内に格納今回だと3つ
             countNo -= 1//配列の数3に対して、配列の序列指定は-1しないとずれる
-    }
+        }
         //print("\(countNo)")
         viewimage = UIImage(named: "\(images[countNo])")//配列からimagesデータを格納する
         //print("\(images[countNo])")
@@ -61,7 +84,6 @@ class ViewController: UIViewController {
     
     ////////////再生・停止ボタン////////////
     @IBAction func previewStopButtonIBA(_ sender: AnyObject) {
-        //タイマーの始動  //カウントを始める  //二秒ごとに関数を呼ばれる処理  //関数内で配列を変更し、表示画像を変更する処理を記述
         //2秒ごとに指定のupdateTimer関数を呼び出す処理
         if self.timer == nil {
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
@@ -83,11 +105,7 @@ class ViewController: UIViewController {
             backButton.alpha = 1
             nextButton.alpha = 1
             //backButton.setTitleColor(UIColor.white, for: .normal)//テキストカラーの変更
-            //nextButton.setTitleColor(UIColor.white, for: .normal)
             self.previewStopButton.setTitle("再生", for: .normal)
-            //backButton.backgroundColor = UIColor(red:59/255,green:89/255,blue:152/255,alpha:0.7)//背景色の変更
-            //backButton.layer.cornerRadius = 20 //角Rの変更
-            //backButton.layer.borderWidth = 10　//
         }
     }
     
